@@ -59,6 +59,7 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\homeqr.svg" />
 	  <None Remove="Resources\Images\search.svg" />
+	  <None Remove="Resources\Images\smprofile.svg" />
 	</ItemGroup>
 
 	<ItemGroup>

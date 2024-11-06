@@ -4,12 +4,20 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:demoHome"
-    Shell.FlyoutBehavior="Disabled"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="False"
+    FlyoutBackgroundColor="LightGray"
     Title="demoHome">
-
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    
+    <Shell.FlyoutHeader>
+        <HorizontalStackLayout BackgroundColor="Red">
+            <Frame Margin="20" HeightRequest="60" WidthRequest="60" CornerRadius="60" IsClippedToBounds="True">
+                <Image Source="smprofile.png" HeightRequest="80" WidthRequest="80" Aspect="AspectFit" />
+            </Frame>
+            <Label x:Name="DisplayName" Text="[DisplayName]" TextColor="White" VerticalOptions="CenterAndExpand"/>
+        </HorizontalStackLayout>
+    </Shell.FlyoutHeader>
+    
+    <ShellContent Title="Home" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
 
 </Shell>
