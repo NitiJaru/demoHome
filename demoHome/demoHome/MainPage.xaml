@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Class="demoHome.MainPage"
+    Shell.NavBarIsVisible="True"
+    Title="Home"
+    BackgroundColor="Red">
+
+    <Grid BackgroundColor="White" RowDefinitions="*, 65">
+        <Grid Grid.Row="1" BackgroundColor="Red" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnDefinitions="*, 110, *">
+            <Grid x:Name="SearchButton" BackgroundColor="Transparent">
+                <Image Source="search.png" WidthRequest="25" HeightRequest="25">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="White" />
+                    </Image.Behaviors>
+                </Image>
+            </Grid>
+            <Grid x:Name="FinancialButton" Grid.Column="2" BackgroundColor="Transparent">
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <Label x:Name="Currency" Text="THB" FontSize="8" TextColor="White" HorizontalOptions="Start" />
+                    <Label x:Name="Balance" Text="0" FontSize="16" TextColor="White" HorizontalOptions="End" />
+                </VerticalStackLayout>
+            </Grid>
+        </Grid>
+
+        <Frame Grid.RowSpan="2" x:Name="ScanQRbtn" BackgroundColor="Red" CornerRadius="90" Padding="0" WidthRequest="90" HeightRequest="90" VerticalOptions="End" HorizontalOptions="Center">
+            <Grid>
+                <Border HeightRequest="70" WidthRequest="70" StrokeShape="RoundRectangle 50" Stroke="White" BackgroundColor="Transparent" Padding="0" StrokeThickness="5" />
+                <Image Source="homeqr.png" WidthRequest="30" HeightRequest="30">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="White" />
+                    </Image.Behaviors>
+                </Image>
+            </Grid>
+        </Frame>
+    </Grid>
+
+</ContentPage>
